@@ -8,7 +8,100 @@
   *
 */
 
+* {
+  box-sizing: border-box;
+}
 
+body {
+  background-color: #004643;
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  color: #abd1c6; 
+}
+
+h1 {
+  color: #fffffe;
+}
+
+
+p, h2, h1 {
+  text-align: center; 
+}
+#start, #submit-btn, #next-q-btn, #restart-btn {
+  text-align: center;
+  margin: 10px;
+  border-radius: 8px;
+  transition-duration: 0.5s;
+  background-color: #f9bc60;
+  color: #001e1d;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+form, li {
+  color: #abd1c6;
+  list-style: none;
+}
+
+input[type="radio"] {
+  margin: 5px;
+  display: inline-block;
+    --primary: hsl(250, 100%, 44%);
+    --other: hsl(0, 0%, 14%);
+  
+    background: hsl(0, 0%, 98%);
+  
+}
+
+
+.start-screen, #question-form, #score, #question-number {
+  text-align: center;
+  
+}
+
+fieldset {
+  border: 0;
+}
+
+.correct {
+  color: #f9bc60;
+  font-size: 24px;
+}
+
+.incorrect {
+  color: #e16162;
+  font-size: 24px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;  
+  text-align: center;
+
+
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .main {
+    display: flex;
+    flex-direction: row;
+  }
+  h1 {
+    font-size: 50px;
+    padding: 30px;
+  }
+  body {
+    font-size: 40px;
+  }
+}
+
+/** wireframe CSS
 .startbtn {
   justify-content: center;
 }
