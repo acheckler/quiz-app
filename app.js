@@ -61,10 +61,7 @@ var STORE = {
     score: 0
   };
 
-
-
-  
-  /*function to load the start screen*/
+/*function to load the start screen*/
 function generateStartScreen() {
   
   return `
@@ -105,7 +102,6 @@ function generateAnswers() {
  /*Generate HTML for current question*/
  function generateCurrentQuestionHTML() {
   let currentQuestion = STORE.questions[STORE.currentQuestion].question;
-  console.log(currentQuestion);
    return `
     <form id = "question-form">
       <fieldset>
@@ -128,10 +124,6 @@ function generateAnswers() {
     
  }
 
- /*ul class="question-and-score">
-
-  /*Generate current question number and score*/
-
   /*Event listener for answer selection + submit button */
    /*conditional function to determine if answer was correct or incorrect*/
 
@@ -139,7 +131,6 @@ function generateAnswers() {
     $('main').on('submit', '#question-form', function(event) {
       event.preventDefault();
       const selectedAnswer = $('input:checked').val();
-      /*let optionBox = `answer-options-${currentQuestion.answers.findIndex(i => i === selectedOption)}`;*/
       let correctHTML  =
       `<div class = "correct"> Correct! </div>`
       let incorrectHTML = 
@@ -160,8 +151,6 @@ function generateAnswers() {
     });
     
   }
-
-  /*condition function to display HTML for correct or incorrect answer*/ /* google 'disable elements'*/
 
   /*Event listener for next question*/
 
@@ -187,7 +176,7 @@ function generateAnswers() {
   `
   
 }
-  
+  /*Event listner for a 'restart quiz' button*/
   /*Reset values to restart quiz */
   function restartQuiz() {
     $('main').on('click','#restart-btn', function(event) {
@@ -200,18 +189,15 @@ function generateAnswers() {
 
     });
   }
-  /*Event listner for a 'restart quiz' button*/
   
 
   /* All-purpose render function */
    function render() {
-    /*let HTML = '';*/
      if (STORE.quizStarted === false) {
      $('main').html(generateStartScreen);
      return;
     }
     else if (STORE.quizStarted = true) {
-      /*HTML = generateCurrentQuestionHTML();*/
       $('main').html(generateCurrentQuestionHTML);
     }
   }
