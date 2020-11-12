@@ -45,9 +45,23 @@ form, li {
   list-style: none;
 }
 
+
+
+.answer-options {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.answer-option-buttons {
+  text-align: left;
+}
+
+
 input[type="radio"] {
   margin: 5px;
-  display: inline-block;
+
     --primary: hsl(250, 100%, 44%);
     --other: hsl(0, 0%, 14%);
   
@@ -56,7 +70,7 @@ input[type="radio"] {
 }
 
 
-.start-screen, #question-form, #score, #question-number {
+.start-screen, fieldset, #score, #question-number {
   text-align: center;
   
 }
@@ -68,17 +82,19 @@ fieldset {
 .correct {
   color: #f9bc60;
   font-size: 24px;
+  text-align: center;
 }
 
 .incorrect {
   color: #e16162;
   font-size: 24px;
+  text-align: center;
 }
 
 .main {
   display: flex;
   flex-direction: column;  
-  text-align: center;
+  /*text-align: center;*/
 
 
 }

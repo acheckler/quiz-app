@@ -85,17 +85,18 @@ function handleStartClick() {
 
 function generateAnswers() {
   const answersArray = STORE.questions[STORE.currentQuestion].answers;
-  let answersHTML = ``;
+  let answersHTML = `<div class = "container">`;
   let i = 0;
   answersArray.forEach(answer => {
     answersHTML += `
-    <div id = "answer-options">
+    <div class = "answer-option-buttons">
         <input type ="radio" name ="options" id ="options{i+1}" value ="${answer}" required>
         <label for = "options${i + 1}"> ${answer} </label>
       </div>
     `
     i++;
   });
+  answersHTML += `</div>`
   return answersHTML;
 }
 
@@ -106,7 +107,7 @@ function generateAnswers() {
     <form id = "question-form">
       <fieldset>
         <legend> ${currentQuestion} </legend>
-      <div id = "answer-options"> 
+      <div class = "answer-options"> 
         ${generateAnswers()}
       </div>
         <button type = "submit" id = "submit-btn">Submit Answer</button>
@@ -138,10 +139,10 @@ function generateAnswers() {
       
       if(selectedAnswer === STORE.questions[STORE.currentQuestion].correctAnswer) {
         STORE.score += 1;
-        $('#answer-options').append(correctHTML);
+        $('#question-form').append(correctHTML);
       }
       else {
-        $('#answer-options').append(incorrectHTML);
+        $('#question-form').append(incorrectHTML);
       }
       STORE.currentQuestion ++
       $('#submit-btn').hide()
@@ -157,7 +158,7 @@ function generateAnswers() {
   function nextQuestionButton() {
     $('main').on('click', '#next-q-btn', function(event) {
       event.preventDefault();
-      if(STORE.currentQuestion === STORE.questions.length - 1) {
+      if(STORE.currentQuestion === STORE.questions.length) {
         $('main').html(resultsPage);
       } else {
       $('main').html(generateCurrentQuestionHTML);
